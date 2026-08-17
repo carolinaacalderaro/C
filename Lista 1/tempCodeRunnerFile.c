@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    int total_dinheiro, x, y, z, A, B, C, sobra, investiu = -1, novo_total = 0, dinheiro_final = 0, soma = 0, parcelas = 0;
+    int total_dinheiro, x, y, z, A = 0, B = 0, C = 0, sobra = 0, investiu = -1, novo_total = 0, dinheiro_final = 0;
     
     scanf("%d", &total_dinheiro);
     scanf("%d", &x);
@@ -66,16 +66,31 @@ int main() {
         }
     }
 
+    if (investiu != -1) {
+
+        dinheiro_final = (3 - investiu) + sobra;
+
+        printf("Cada homem ficou com %d, %d e %d reais, respectivamente.\n", A, B, C);
+    }
+
+    else {
+        dinheiro_final = 3;
+
+        printf("Nao foi dessa vez que Rebeka pode ajudar...\n");
+    }
+
     if (investiu == 2) {
         char l1, l2, l3;
 
         scanf(" %c %c %c", &l1, &l2, &l3);
 
-        soma = (l1 - 'a' + 1) + (l2 - 'a' + 1) + (l3 - 'a' + 1);
+        int soma = (l1 - 'a' + 1) + (l2 - 'a' + 1) + (l3 - 'a' + 1);
+
+        printf("%d\n", soma);
     }
 
     else if (investiu == 3) {
-        int i1, i2, i3;
+        int i1, i2, i3, parcelas = 0;
 
         scanf("%d %d %d", &i1, &i2, &i3);
 
@@ -91,32 +106,8 @@ int main() {
             if (i3 % 3 == 0) {
                 parcelas += i3 / 3;
             }
+        printf("%d\n", parcelas);
         }
-        
-        else{
-            investiu = -1;
-        }
-    }
-
-    if (investiu != -1) {
-
-        dinheiro_final = (3 - investiu) + sobra;
-
-        printf("Cada homem ficou com %d, %d e %d reais, respectivamente.\n", A, B, C);
-
-        if (investiu == 2) {
-            printf("%d\n", soma);
-        }
-
-        else if (investiu == 3) {
-            printf("%d\n", parcelas);
-        }
-    }
-
-    else {
-        dinheiro_final = 3;
-
-        printf("Nao foi dessa vez que Rebeka pode ajudar...\n");
     }
 
     if (dinheiro_final >= 7) {
