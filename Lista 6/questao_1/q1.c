@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <string.h>
 
-int main(void) {
+int main() {
     FILE *entrada = fopen("requisicoes.txt", "r");
     FILE *saida;
     int n;
@@ -52,8 +53,7 @@ int main(void) {
 
         if (tempo > tempoMaisLento) {
             tempoMaisLento = tempo;
-            snprintf(endpointMaisLento, sizeof(endpointMaisLento), "%s", endpoint);
-        }
+            strcpy(endpointMaisLento, endpoint);        }
     }
 
     fclose(entrada);
