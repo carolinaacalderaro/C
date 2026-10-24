@@ -31,7 +31,6 @@ void converter_txt_para_bin(char *arq_txt, char *arq_bin) {
 
     for (int i = 0; i < q; i++) {
         Trabalho t;
-        memset(&t, 0, sizeof(Trabalho));
         fscanf(ft, "%d %19s %d", &t.id_trabalho, t.sigla_centro, &t.nota);
         fwrite(&t, sizeof(Trabalho), 1, fb);
     }

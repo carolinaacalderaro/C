@@ -21,7 +21,6 @@ int main() {
 
     scanf("%d", &n);
     for (i = 0; i < n; i++) {
-        memset(&c, 0, sizeof(Conta));
         scanf("%f %50[^\n]", &c.saldo, c.titular);
         c.ativa = 1;
         fwrite(&c, sizeof(Conta), 1, arq);
