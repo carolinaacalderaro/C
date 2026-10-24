@@ -53,7 +53,8 @@ int main() {
 
         if (tempo > tempoMaisLento) {
             tempoMaisLento = tempo;
-            strcpy(endpointMaisLento, endpoint);        }
+            strcpy(endpointMaisLento, endpoint);        
+        }
     }
 
     fclose(entrada);
